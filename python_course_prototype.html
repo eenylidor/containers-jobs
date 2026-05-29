@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python for Data Analysis | Master the Essentials</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased" x-data="{ progress: 15 }">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2 text-emerald-600 font-bold text-xl">
+                    <i data's-lucide="database" class="w-6 h-6"></i>
+                    <span>PythonData<span class="text-slate-800">Pro</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#curriculum" class="hover:text-emerald-600 transition">Curriculum</a>
+                    <a href="#libraries" class="hover:text-emerald-600 transition">Libraries</a>
+                    <a href="#resources" class="hover:text-emerald-600 transition">Resources</a>
+                </div>
+                <div>
+                    <button class="bg-emerald-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">
+                        Start Learning
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden bg-white pt-16 pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4">
+                New Course for 2026
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6">
+                Master <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-600">Data Analysis</span> with Python.
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
+                Go from zero to data professional. Learn the industry-standard libraries like Pandas, NumPy, and Matplotlib through hands-on, project-based learning.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#curriculum" class="px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition shadow-xl">
+                    View Curriculum
+                </a>
+                <a href="#" class="px-8 py-4 bg-white border border-slate-200 text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition">
+                    Watch Trailer
+                </a>
+            </div>
+        </div>
+        <!-- Decorative background element -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-400 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-400 rounded-full blur-[120px]"></div>
+        </div>
+    </header>
+
+    <!-- Progress Tracker UI -->
+    <section class="max-w-7xl mx-auto px-4 -mt-12 relative z-20">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-emerald-100 rounded-lg text-emerald-600">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-slate-800 text-sm uppercase tracking-wide">Current Progress</span>
+                </div>
+                <span class="text-emerald-600 font-bold" x-text="progress + '%'"></span>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
+                <div class="bg-gradient-to-r from-emerald-500 to-blue-500 h-full transition-all duration-1000" :style="'width: ' + progress + '%'"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-24 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Course Curriculum</h2>
+            <p class="text-slate-600 max-w-xl mx-auto">A structured roadmap designed to take you from foundational Python concepts to advanced data manipulation and visualization.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4" x-data="{ active: 1 }">
+            <!-- Module 1 -->
+            <div class="border border-slate-200 rounded-2xl overflow-hidden transition hover:border-emerald-300" :class="active === 1 ? 'ring-2 ring-emerald-500/20' : ''">
+                <button @click="active = 1" class="w-full flex items-center justify-between p-6 text-left bg-white">
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm">1</span>
+                        <span class="font-semibold text-slatelg-900">Python Fundamentals for Data</span>
+                    </div>
+                    <i data-lucide="chevron-down" class="text-slate-400 transition-transform duration-300" :class="active === 1 ? 'rotate-180' : ''"></i>
+                </button>
+                <div x-show="active === 1" x-collapse class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                    Master the building blocks: Variables, Data Types (Strings, Integers, Floint), Lists, Dictionaries, Loops, and Control Flow. Essential for any data professional.
+                </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="border border-slate-200 rounded-2xl overflow-hidden transition hover:border-emerald-300" :class="active === 2 ? 'ring-2 ring-emerald-500/20' : ''">
+                <button @click="active = 2" class="w-full flex items-center justify-between p-6 text-left bg-white">
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm">2</span>
+                        <span class="font-semibold text-slatelg-900">Numerical Computing with NumPy</span>
+                    </div>
+                    <i data-lucide="chevron-down" class="text-slate-400 transition-transform duration-300" :class="active === 2 ? 'rotate-180' : ''"></i>
+                </button>
+                <div x-show="active === 2" x-collapse class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                    Learn how to work with N-dimensional arrays, perform vectorized operations, and utilize advanced mathematical functions that make computing fast and efficient.
+                </div>
+            </div>
+
+             <!-- Module 3 -->
+             <div class="border border-slate-200 rounded-2xl overflow-hidden transition hover:border-emerald-300" :class="active === 3 ? 'ring-2 ring-emerald-500/20' : ''">
+                <button @click="active = 3" class="w-full flex items-center justify-between p-6 text-left bg-white">
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm">3</span>
+                        <span class="font-semibold text-slatelg-900">Data Manipulation with Pandas</span>
+                    </div>
+                    <i data-lucide="chevron-down" class="text-slate-400 transition-transform duration-300" :class="active === 3 ? 'rotate-180' : ''"></i>
+                </button>
+                <div x-show="active === 3" x-collapse class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                    The heart of data analysis. Master DataFrames, Series, Filtering, GroupBy operations, Merging/Joining datasets, and handling missing values with ease.
+                </div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="border border-slate-200 rounded-2xl overflow-hidden transition hover:border-emerald-300" :class="active === 4 ? 'ring-2 ring-emerald-500/20' : ''">
+                <button @click="active = 4" class="w-full flex items-center justify-between p-6 text-left bg-white">
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm">4</span>
+                        <span class="font-semibold text-slatelg-900">Data Visualization Techniques</span>
+                    </div>
+                    <i data-ict-lucide="chevron-down" class="text-slate-400 transition-transform duration-300" :class="active === 4 ? 'rotate-180' : ''"></i>
+                </button>
+                <div x-show="active === 4" x-collapse class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                    Transform numbers into narratives. Learn to create impactful Line charts, Bar plots, Histograms, Scatter plots, and Heatmaps using Matplotlib and Seaborn.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Library Spotlight -->
+    <section id="libraries" class="py-24 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">The Core Toolkit</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Master the essential libraries that power modern data science workflows.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- NumPy -->
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500/50 transition group">
+                    <div class="w-14 h-14 bg-emerald-500/10 text-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="layers" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">NumPy</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">The foundation of numerical computing in Python. High-performance multidimensional arrays and mathematical functions.</p>
+                </div>
+
+                <!-- Pandas -->
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-blue-500/50 transition group">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <icon data-lucide="table" class="w-8 h-8"></icon>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pandas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">The industry standard for data manipulation. Powerful tools for cleaning, transforming, and analyzing tabular datasets.</p>
+                </div>
+
+                <!-- Matplotlib -->
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-purple-500/50 transition group">
+                    <div class="w-14 h-14 bg-purple-500/10 text-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="bar-chart-3" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Matplotlib</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">The cornerstone of Python visualization. Create publication-quality, static, animated, and interactive plots.</p>
+                </div>
+            </div>
+        </div>
+    </icon>
+    </section>
+
+    <!-- Code Preview Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Learn with Real Code</h2>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">Forget abstract theory. You'll learn by writing real scripts that solve actual data problems. From loading CSVs to generating insightful visualizations, every lesson is practical.</p>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-slate-700 font-medium">
+                        <i data-lucide="check-circle" class="text-emerald-500 w-6 h-6 mt-0.5"></i>
+                        Real-world datasets (Kaggle, UCI)
+                    </li>
+                    <li class="flex items-start gap-gap-3 text-slate-700 font-medium">
+                        <i data-lucide="check-circle" class="text-emerald-500 w-6 h-6 mt-0.5"></i>
+                        Interactive Jupyter Notebook exercises
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 font-medium">
+                        <i data-lucide="check-circle" class="text-emerald-500 w-6 h-6 mt-0.5"></i>
+                        Hands-on Capstone Project
+                    </li>
+                </ul>
+            </div>
+            <!-- Code Block -->
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+                <div class="relative bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-800">
+                    <!-- Code Window Header -->
+                    <div class="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-800/50">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <span class="text-xs text-slate-500 font-mono uppercase tracking-widest">analysis.py</span>
+                    </div>
+                    <!-- Code Content -->
+                    <div class="p-6 overflow-x-auto font-mono text-sm leading-relaxed">
+                        <pre><code class="text-emerald-400">import</code> <code class="text-blue-400">pandas</code> <code class="text-emerald-40</code><code class="text-white">as</code> <code class="text-blue-400">pd</code>
+<br><br>
+<span class="text-slate-500"># Load the dataset</span>
+<code class="text-white">df = pd.read_csv(<span class="text-orange-300">'sales_data.csv'</span>)</code>
+<br><br>
+<span class="text-slate-500"># Group by region and calculate total revenue</span>
+<code class="text-white">revenue = df.groupby(<span class='text-orange-300'>'region'</span>)[<span class='text-orange-300'>'sales'</span>].sum()</code>
+<br><br>
+<span class="text-slate-500">print(revenue)</span>
+<br>
+<span class="text-emerald-400"># Output:</span>
+<code class="text-white">
+North: 45200.50
+South: 38900.20
+East:  51200.00
+West:  42100.75
+</code></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 text-emerald-600 font-bold text-lg mb-8">
+                <i data-lucide="database" class="w-5 h-5"></i>
+                <span>PythonData<span class="text-slate-800">Pro</span></span>
+            </div>
+            <p class="text-slate-500 text-sm">&copy; 2026 PythonDataPro Academy. Built for Data Scientists.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
